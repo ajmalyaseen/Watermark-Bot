@@ -53,7 +53,7 @@ async def HelpWatermark(bot, cmd):
 	await cmd.reply_text(
 		text=Config.USAGE_WATERMARK_ADDER,
 		parse_mode="Markdown",
-		reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Developer", url="https://t.me/AbirHasan2005"), InlineKeyboardButton("Support Group", url="https://t.me/linux_repo")], [InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")], [InlineKeyboardButton("Source Code", url="https://github.com/AbirHasan2005/Watermark-Bot")]]),
+		reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Developer", url="https://t.me/AbirHasan2005"), InlineKeyboardButton("Support Group", url="https://t.me/linux_repo")], [InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")], [InlineKeyboardButton("Source Code", url="https://github.com/AbirHasan2005/Watermark-Bot")], [InlineKeyboardButton("Help", callback_data="helpMeh")]]),
 		disable_web_page_preview=True
 	)
 
@@ -568,6 +568,15 @@ async def button(bot, cmd: CallbackQuery):
 		except MessageNotModified:
 			pass
 
+	elif cb_data == "helpMeh":
+		await cmd.message.edit(
+			text="How to use me??",
+			disable_web_page_preview=True,
+			reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Go Back", callback_data="goBack")]])
+		)
+	elif cb_data == "goBack":
+		await cmd.message.delete(True)
+		await HelpWatermark(bot, cmd.message)
 	elif cb_data.startswith("ban_"):
 		if Config.UPDATES_CHANNEL is None:
 			await cmd.answer("Sorry Sir, You didn't Set any Updates Channel!", show_alert=True)
