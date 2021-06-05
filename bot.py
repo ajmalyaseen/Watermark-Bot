@@ -577,8 +577,7 @@ async def button(bot, cmd: CallbackQuery):
 	elif cb_data == "goBack":
 		await cmd.message.delete(True)
 		await HelpWatermark(bot, cmd.message)
-	elif cb_data.startswith("ban_"):
-        	elif cb_data == "about":
+        elif cb_data == "about":
 		await cmd.message.edit(
 			text="about me??",
 			disable_web_page_preview=True,
@@ -587,6 +586,7 @@ async def button(bot, cmd: CallbackQuery):
 	elif cb_data == "goBack":
 		await cmd.message.delete(True)
 		await HelpWatermark(bot, cmd.message)
+        elif cb_data.startswith("ban_"):
 		if Config.UPDATES_CHANNEL is None:
 			await cmd.answer("Sorry Sir, You didn't Set any Updates Channel!", show_alert=True)
 			return
