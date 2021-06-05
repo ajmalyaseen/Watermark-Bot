@@ -578,7 +578,6 @@ async def button(bot, cmd: CallbackQuery):
 		await cmd.message.delete(True)
 		await HelpWatermark(bot, cmd.message)
 
-
         elif cb_data == "about":
 		await cmd.message.edit(
 			text="about me??",
