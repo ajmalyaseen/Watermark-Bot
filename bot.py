@@ -578,25 +578,15 @@ async def button(bot, cmd: CallbackQuery):
 		await cmd.message.delete(True)
 		await HelpWatermark(bot, cmd.message)
 
-        elif cb_data == "helpMeh":
+        elif cb_data == "about":
 		await cmd.message.edit(
-			text="How to use me??",
+			text="about me??",
 			disable_web_page_preview=True,
 			reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Go Back", callback_data="goBack")]])
 		)
 	elif cb_data == "goBack":
 		await cmd.message.delete(True)
 		await HelpWatermark(bot, cmd.message)
-elif cb_data == "helpMeh":
-		await cmd.message.edit(
-			text="How to use me??",
-			disable_web_page_preview=True,
-			reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Go Back", callback_data="goBack")]])
-		)
-	elif cb_data == "goBack":
-		await cmd.message.delete(True)
-		await HelpWatermark(bot, cmd.message)
-
         elif cb_data.startswith("ban_"):
 		if Config.UPDATES_CHANNEL is None:
 			await cmd.answer("Sorry Sir, You didn't Set any Updates Channel!", show_alert=True)
