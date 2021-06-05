@@ -53,7 +53,7 @@ async def HelpWatermark(bot, cmd):
 	await cmd.reply_text(
 		text=Config.USAGE_WATERMARK_ADDER,
 		parse_mode="Markdown",
-		reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Developer", url="https://t.me/AbirHasan2005"), InlineKeyboardButton("Support Group", url="https://t.me/linux_repo")], [InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")], [InlineKeyboardButton("Source Code", url="https://github.com/AbirHasan2005/Watermark-Bot")], [InlineKeyboardButton("Help", callback_data="helpMeh")]]),
+		reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Developer", url="https://t.me/AbirHasan2005"), InlineKeyboardButton("Support Group", url="https://t.me/linux_repo")], [InlineKeyboardButton("Bots Channel", url="https://t.me/Discovery_Updates")], [InlineKeyboardButton("ABOUT", callback_data="about")], [InlineKeyboardButton("Help", callback_data="helpMeh")]]),
 		disable_web_page_preview=True
 	)
 
